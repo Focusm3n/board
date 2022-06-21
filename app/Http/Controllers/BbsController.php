@@ -9,22 +9,11 @@ class BbsController extends Controller
 {
     public function index()
     {
-        $bbs = Bb::all();
-        $s = "Объявления\r\n\r\n";
-        foreach ($bbs as $bb) {
-            $s .= $bb->id . "\r\n";
-            $s .= $bb->title . "\r\n";
-            $s .= $bb->content . "\r\n";
-            $s .= $bb->price . " руб.\r\n";
-            $s .= "\r\n";
-        }
-        return response($s)->header('Content-Type', 'text/plain');
+        $context = ['bbs' => Bb::all()];
+        return view('index', $context);
     }
 
     public function detail(Bb $bb){
-        $s = $bb->title . "\r\n\r\n";
-        $s .= $bb->content . "\r\n";
-        $s .= $bb->price . "руб.\r\n";
-        return response($s)->header('Content-Type', 'text/plain');
+       return view('detail', ['bb' => $bb]);
     }
 }

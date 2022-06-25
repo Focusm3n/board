@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Добавление объявления :: Мои объявления')
+@section('title', 'Добавление объявления')
 
 @section('main')
     <form action=" {{ route ('bb.store') }} " method="POST">

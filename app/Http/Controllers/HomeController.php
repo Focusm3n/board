@@ -15,10 +15,10 @@ class HomeController extends Controller
     ];
 
     private const BB_ERROR_MESSAGES = [
-        'price.required' => 'Раздавать товары бесплатно нельзя',
+        'price.required' => 'Раздавать товары бесплатно нельзя :)',
         'required' => 'Заполните это поле',
         'max' => 'Значение не должно быть длиннее :max символов',
-        'numeric' => 'Введите число'
+        'price.numeric' => 'Введите число'
     ];
 
     /**
